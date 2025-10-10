@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задач</title>
+    <link rel="stylesheet" href="/static/Style.css">
+</head>
+<body>
+    <h1>Список задач</h1>
+
+    <a href="/create_task" class="add-task">Добавить новую задачу</a>
+
+    <!-- Вставляем цикл Jinja2 здесь -->
+    {% for task in tasks %}
+    <div class="task">
+        <h3>{{ task[1] }}</h3>
+        <p>{{ task[2] or 'Нет описания' }}</p>
+        <h5>Время создания задачи: {{ task[3] or 'Нет времени создания задачи' }}</h5>
+        <h5>Время выполнения задачи: {{ (task[4] | replace("T"," ")) or 'Нет времени выполнения задачи' }}</h5>
+        <small>ID: {{ task[0] }}</small>
+        <div class="task-actions">
+            <a href="/update_task/{{ task[0] }}">✏️ Редактировать</a>
+            <form action="/delete_task/{{ task[0] }}" method="POST" style="display:inline;">
+                <button type="submit">🗑 Удалить</button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- Конец цикла -->
+
+    {% if not tasks %}
+    <p>Пока нет задач. Создайте первую!</p>
+    {% endif %}
+</body>
+</html>

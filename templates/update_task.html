@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Task</title>
+    <link rel="stylesheet" href="/static/Style.css">
+</head>
+<body>
+    <h1>Изменить задачу</h1>
+    <form action="/update_task/{{ task[0] }}" method="POST">
+
+        <label for="title">Новое название задачи:</label><br>
+        <input type="text" name="title" id="title" required><br><br>
+
+        <label for="description">Новое описание задачи:</label><br>
+        <textarea name="description" id="description" required></textarea><br><br>
+
+        <label for="task_time">Новое время выполнения задачи:</label><br>
+        <input type="datetime-local" name = 'task_time' id = 'task_time'><br><br>
+
+        <button type="submit">Обновить задачу</button>
+    </form>
+</body>
+</html>

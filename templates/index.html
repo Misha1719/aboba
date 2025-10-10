@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/Style.css">
+</head>
+<body>
+    <h1>Создать задачу</h1>
+    <form action="/post_create_task" method="post">
+        <label for="title">Название задачи:</label><br>
+        <input type="text" name = 'title' id = 'title'><br><br>
+
+        <label for="description">Описание задачи:</label><br>
+        <textarea name = 'description' id = "description"></textarea><br><br>
+
+        <label for="task_time">Время выполнения задачи:</label><br>
+        <input type="datetime-local" name = 'task_time' id = 'task_time'><br><br>
+
+        <button type="submit">Отправить</button>
+
+    </form>
+
+</body>
+</html>
