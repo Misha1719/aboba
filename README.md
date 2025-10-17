@@ -23,6 +23,19 @@
 ├── static/                   # статические файлы
 └── templates/                # шаблоны html страниц
 ```
+
+# Установка
+
+1. клонировать репозиторий
+2. установить библиотеки
+```commandline
+pip install -r requirements.txt
+```
+3. чтобы запустить проект нужно в терминале написать команду: 
+```commandline
+uvicorn main:app
+```
+
 # Источники
 
 1. [FastAPI](https://fastapi.tiangolo.com/)
